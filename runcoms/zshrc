@@ -26,3 +26,9 @@ esac
 
 # SSH with zsh
 zssh() ssh "$@" -t zsh
+
+# Add Anaconda to Path
+export PATH=/c/OneDrive/Windows/System/Miniconda2:/c/OneDrive/Windows/System/Miniconda2/Scripts:$PATH
+
+# Add Sublime to Path
+export PATH=/c/OneDrive/Windows/PortableApps/SublimePortable:$PATH
