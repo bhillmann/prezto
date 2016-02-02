@@ -26,7 +26,9 @@ version is 4.3.17.
         for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
           ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
         done
-        
+	
+	Or if you are on a Windows MSYS2 machine:
+	
         setopt EXTENDED_GLOB
         for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 	        link=`cygpath -w $rcfile`
