@@ -11,3 +11,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+case "$TERM" in
+xterm*)
+	# The following programs are known to require a Win32 Console
+	# for interactive usage, therefore let's launch them through winpty
+	# when run inside `mintty`.
+	for name in node ipython php php5 psql python2.7 python
+	do
+		alias $name="winpty $name.exe"
+	done
+	;;
+esac
+
+# SSH with zsh
+zssh() ssh "$@" -t zsh
