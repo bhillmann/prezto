@@ -26,6 +26,13 @@ version is 4.3.17.
         for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
           ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
         done
+        
+        setopt EXTENDED_GLOB
+        for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+	        link=`cygpath -w $rcfile`
+	        target=`cygpath -w "${ZDOTDIR:-$HOME}/.${rcfile:t}"`
+	        cmd <<< "mklink \"$target\" \"${link//\//\\}\"" > /dev/null
+        done
 
   4. Set Zsh as your default shell:
 
