@@ -2,17 +2,18 @@
 # A theme based on Steve Losh's Extravagant Prompt with vcs_info integration.
 #
 # Authors:
+#   Benjamin Hillmann <bhillmann@outlook.com>
 #   Steve Losh <steve@stevelosh.com>
 #   Bart Trojanowski <bart@jukie.net>
 #   Brian Carper <brian@carper.ca>
-#   steeef <steeef@gmail.com>
+#   ben <ben@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 # Screenshots:
 #   http://i.imgur.com/HyRvv.png
 #
 
-function prompt_steeef_setup {
+function prompt_ben_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)
@@ -22,7 +23,7 @@ function prompt_steeef_setup {
 
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    _prompt_steeef_colors=(
+    _prompt_ben_colors=(
       "%F{81}"  # Turquoise
       "%F{166}" # Orange
       "%F{135}" # Purple
@@ -30,7 +31,7 @@ function prompt_steeef_setup {
       "%F{118}" # Limegreen
     )
   else
-    _prompt_steeef_colors=(
+    _prompt_ben_colors=(
       "%F{cyan}"
       "%F{yellow}"
       "%F{magenta}"
@@ -44,9 +45,9 @@ function prompt_steeef_setup {
 
   # Define prompts.
   PROMPT="
-${_prompt_steeef_colors[3]}%n%f at ${_prompt_steeef_colors[2]}%m%f in ${_prompt_steeef_colors[5]}%~%f 
+${_prompt_ben_colors[3]}%n%f at ${_prompt_ben_colors[2]}%m%f in ${_prompt_ben_colors[5]}%~%f 
 $ "
   RPROMPT=''
 }
 
-prompt_steeef_setup "$@"
+prompt_ben_setup "$@"
